@@ -1,4 +1,8 @@
+import type { FlashCard, RendererElements } from './types.js'
+
 export class CardRenderer {
+  private elements: RendererElements
+
   constructor() {
     this.elements = {
       focusGrammar: document.getElementById('focus-grammar'),
@@ -14,38 +18,52 @@ export class CardRenderer {
     }
   }
 
-  renderCard(card, isFlipped = false) {
+  renderCard(card: FlashCard, isFlipped: boolean = false): void {
     this.renderFront(card)
     this.renderBack(card)
     this.setFlipped(isFlipped)
   }
 
-  renderFront(card) {
+  private renderFront(card: FlashCard): void {
     if (!card.front) return
 
-    this.elements.focusGrammar.textContent = card.front.focus || ''
+    if (this.elements.focusGrammar) {
+      this.elements.focusGrammar.textContent = card.front.focus || ''
+    }
     
-    const japaneseText = this.parseMarkdown(card.front.text || '')
-    this.elements.japaneseText.innerHTML = japaneseText
+    if (this.elements.japaneseText) {
+      const japaneseText = this.parseMarkdown(card.front.text || '')
+      this.elements.japaneseText.innerHTML = japaneseText
+    }
   }
 
-  renderBack(card) {
+  private renderBack(card: FlashCard): void {
     if (!card.back) return
 
-    this.elements.meaning.textContent = card.back.meaning || ''
-    this.elements.description.textContent = card.back.description || ''
-    this.elements.rule.textContent = card.back.rule || ''
-    this.elements.nuance.textContent = card.back.nuance || ''
-    this.elements.translation.textContent = card.back.example_translation || ''
+    if (this.elements.meaning) {
+      this.elements.meaning.textContent = card.back.meaning || ''
+    }
+    if (this.elements.description) {
+      this.elements.description.textContent = card.back.description || ''
+    }
+    if (this.elements.rule) {
+      this.elements.rule.textContent = card.back.rule || ''
+    }
+    if (this.elements.nuance) {
+      this.elements.nuance.textContent = card.back.nuance || ''
+    }
+    if (this.elements.translation) {
+      this.elements.translation.textContent = card.back.example_translation || ''
+    }
   }
 
-  parseMarkdown(text) {
+  private parseMarkdown(text: string): string {
     if (!text) return ''
     
     return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
   }
 
-  setFlipped(flipped) {
+  setFlipped(flipped: boolean): void {
     if (flipped) {
       this.elements.flashcard.classList.add('flipped')
       this.elements.cardFront.classList.add('hidden')
@@ -57,17 +75,17 @@ export class CardRenderer {
     }
   }
 
-  isFlipped() {
+  isFlipped(): boolean {
     return this.elements.flashcard.classList.contains('flipped')
   }
 
-  flipCard() {
+  flipCard(): boolean {
     const isCurrentlyFlipped = this.isFlipped()
     this.setFlipped(!isCurrentlyFlipped)
     return !isCurrentlyFlipped
   }
 
-  clear() {
+  clear(): void {
     Object.values(this.elements).forEach(element => {
       if (element && element.textContent !== undefined) {
         element.textContent = ''

@@ -1,19 +1,25 @@
+import type { ProgressData, ProgressStats } from './types.js'
+
 export class ProgressTracker {
-  constructor(deckName) {
+  private deckName: string
+  private storageKey: string
+  private progress: ProgressData
+
+  constructor(deckName: string) {
     this.deckName = deckName
     this.storageKey = `benki_progress_${this.sanitizeDeckName(deckName)}`
     this.progress = this.loadProgress()
   }
 
-  sanitizeDeckName(name) {
+  private sanitizeDeckName(name: string): string {
     return name.toLowerCase().replace(/[^a-z0-9]/g, '_')
   }
 
-  loadProgress() {
+  private loadProgress(): ProgressData {
     try {
-      const stored = localStorage.getItem(this.storageKey)
+      const stored: string | null = localStorage.getItem(this.storageKey)
       if (stored) {
-        const parsed = JSON.parse(stored)
+        const parsed: any = JSON.parse(stored)
         // Convert arrays back to Sets
         return {
           cardsSeen: new Set(parsed.cardsSeen || []),
@@ -38,7 +44,7 @@ export class ProgressTracker {
     }
   }
 
-  saveProgress() {
+  private saveProgress(): void {
     try {
       const progressData = {
         ...this.progress,
@@ -52,7 +58,7 @@ export class ProgressTracker {
     }
   }
 
-  initializeDeck(totalCards) {
+  initializeDeck(totalCards: number): void {
     this.progress.totalCards = totalCards
     if (this.progress.cardsSeen.size === 0) {
       this.progress.studySessions = 1
@@ -60,25 +66,25 @@ export class ProgressTracker {
     this.saveProgress()
   }
 
-  markCardSeen(cardId) {
+  markCardSeen(cardId: string): void {
     this.progress.cardsSeen.add(cardId)
     this.progress.lastStudied = Date.now()
     this.saveProgress()
   }
 
-  markCardCorrect(cardId) {
+  markCardCorrect(cardId: string): void {
     this.progress.cardsCorrect.add(cardId)
     this.progress.cardsIncorrect.delete(cardId)
     this.markCardSeen(cardId)
   }
 
-  markCardIncorrect(cardId) {
+  markCardIncorrect(cardId: string): void {
     this.progress.cardsIncorrect.add(cardId)
     this.progress.cardsCorrect.delete(cardId)
     this.markCardSeen(cardId)
   }
 
-  getProgress() {
+  getProgress(): ProgressStats {
     return {
       seen: this.progress.cardsSeen.size,
       correct: this.progress.cardsCorrect.size,
@@ -91,19 +97,19 @@ export class ProgressTracker {
     }
   }
 
-  isCardSeen(cardId) {
+  isCardSeen(cardId: string): boolean {
     return this.progress.cardsSeen.has(cardId)
   }
 
-  isCardCorrect(cardId) {
+  isCardCorrect(cardId: string): boolean {
     return this.progress.cardsCorrect.has(cardId)
   }
 
-  isCardIncorrect(cardId) {
+  isCardIncorrect(cardId: string): boolean {
     return this.progress.cardsIncorrect.has(cardId)
   }
 
-  resetProgress() {
+  resetProgress(): void {
     this.progress = {
       cardsSeen: new Set(),
       cardsCorrect: new Set(),

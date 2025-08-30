@@ -1,45 +1,50 @@
 import { CardLoader } from './CardLoader.js'
 import { ProgressTracker } from './ProgressTracker.js'
 import { CardRenderer } from './CardRenderer.js'
+import type { FlashCard, AppElements } from './types.js'
 
 export class FlashcardApp {
+  private cardLoader: CardLoader
+  private progressTracker: ProgressTracker | null = null
+  private cardRenderer: CardRenderer
+  
+  private cards: FlashCard[] = []
+  private currentCardIndex: number = 0
+  private isLoaded: boolean = false
+  private elements: AppElements
+
   constructor() {
     this.cardLoader = new CardLoader()
-    this.progressTracker = null
     this.cardRenderer = new CardRenderer()
-    
-    this.cards = []
-    this.currentCardIndex = 0
-    this.isLoaded = false
     
     this.elements = {
       loading: document.getElementById('loading'),
       errorMessage: document.getElementById('error-message'),
       errorText: document.getElementById('error-text'),
-      retryButton: document.getElementById('retry-button'),
+      retryButton: document.getElementById('retry-button') as HTMLButtonElement | null,
       flashcardContainer: document.getElementById('flashcard-container'),
       deckName: document.getElementById('deck-name'),
       cardCounter: document.getElementById('card-counter'),
       progressFill: document.getElementById('progress-fill'),
       
-      prevButton: document.getElementById('prev-button'),
-      nextButton: document.getElementById('next-button'),
-      shuffleButton: document.getElementById('shuffle-button'),
-      resetProgressButton: document.getElementById('reset-progress')
+      prevButton: document.getElementById('prev-button') as HTMLButtonElement | null,
+      nextButton: document.getElementById('next-button') as HTMLButtonElement | null,
+      shuffleButton: document.getElementById('shuffle-button') as HTMLButtonElement | null,
+      resetProgressButton: document.getElementById('reset-progress') as HTMLButtonElement | null
     }
   }
 
-  async initialize() {
+  async initialize(): Promise<void> {
     this.bindEvents()
     await this.loadCards()
   }
 
-  bindEvents() {
-    this.elements.retryButton.addEventListener('click', () => this.loadCards())
-    this.elements.prevButton.addEventListener('click', () => this.previousCard())
-    this.elements.nextButton.addEventListener('click', () => this.nextCard())
-    this.elements.shuffleButton.addEventListener('click', () => this.shuffleDeck())
-    this.elements.resetProgressButton.addEventListener('click', () => this.resetProgress())
+  private bindEvents(): void {
+    this.elements.retryButton?.addEventListener('click', () => this.loadCards())
+    this.elements.prevButton?.addEventListener('click', () => this.previousCard())
+    this.elements.nextButton?.addEventListener('click', () => this.nextCard())
+    this.elements.shuffleButton?.addEventListener('click', () => this.shuffleDeck())
+    this.elements.resetProgressButton?.addEventListener('click', () => this.resetProgress())
 
     // Add tap-to-flip functionality to the flashcard
     const flashcard = document.getElementById('flashcard')
@@ -51,7 +56,7 @@ export class FlashcardApp {
     document.addEventListener('keydown', (e) => this.handleKeyPress(e))
   }
 
-  async loadCards() {
+  private async loadCards(): Promise<void> {
     this.showLoading()
 
     try {
@@ -61,7 +66,9 @@ export class FlashcardApp {
       this.progressTracker = new ProgressTracker(deckInfo.name)
       this.progressTracker.initializeDeck(cards.length)
       
-      this.elements.deckName.textContent = deckInfo.name
+      if (this.elements.deckName) {
+        this.elements.deckName.textContent = deckInfo.name
+      }
       
       this.isLoaded = true
       this.currentCardIndex = 0
@@ -71,30 +78,31 @@ export class FlashcardApp {
       this.updateUI()
 
     } catch (error) {
-      this.showError(error.message)
+      const message = error instanceof Error ? error.message : 'Unknown error occurred'
+      this.showError(message)
     }
   }
 
-  showLoading() {
-    this.elements.loading.classList.remove('hidden')
-    this.elements.errorMessage.classList.add('hidden')
-    this.elements.flashcardContainer.classList.add('hidden')
+  private showLoading(): void {
+    this.elements.loading?.classList.remove('hidden')
+    this.elements.errorMessage?.classList.add('hidden')
+    this.elements.flashcardContainer?.classList.add('hidden')
   }
 
-  showError(message) {
+  private showError(message: string): void {
     this.elements.loading.classList.add('hidden')
     this.elements.flashcardContainer.classList.add('hidden')
     this.elements.errorMessage.classList.remove('hidden')
     this.elements.errorText.textContent = message
   }
 
-  showFlashcard() {
+  private showFlashcard(): void {
     this.elements.loading.classList.add('hidden')
     this.elements.errorMessage.classList.add('hidden')
     this.elements.flashcardContainer.classList.remove('hidden')
   }
 
-  renderCurrentCard() {
+  private renderCurrentCard(): void {
     if (!this.isLoaded || this.cards.length === 0) return
 
     const currentCard = this.cards[this.currentCardIndex]
@@ -103,13 +111,13 @@ export class FlashcardApp {
     this.progressTracker.markCardSeen(currentCard.id)
   }
 
-  flipCard() {
+  private flipCard(): void {
     if (!this.isLoaded) return
 
     this.cardRenderer.flipCard()
   }
 
-  nextCard() {
+  private nextCard(): void {
     if (!this.isLoaded) return
 
     this.currentCardIndex = (this.currentCardIndex + 1) % this.cards.length
@@ -118,7 +126,7 @@ export class FlashcardApp {
     this.resetCardFlip()
   }
 
-  previousCard() {
+  private previousCard(): void {
     if (!this.isLoaded) return
 
     this.currentCardIndex = this.currentCardIndex === 0 
@@ -129,11 +137,11 @@ export class FlashcardApp {
     this.resetCardFlip()
   }
 
-  resetCardFlip() {
+  private resetCardFlip(): void {
     this.cardRenderer.setFlipped(false)
   }
 
-  shuffleDeck() {
+  private shuffleDeck(): void {
     if (!this.isLoaded) return
 
     this.cardLoader.shuffleCards()
@@ -144,7 +152,7 @@ export class FlashcardApp {
     this.resetCardFlip()
   }
 
-  resetProgress() {
+  private resetProgress(): void {
     if (!this.isLoaded) return
 
     if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
@@ -153,7 +161,7 @@ export class FlashcardApp {
     }
   }
 
-  updateUI() {
+  private updateUI(): void {
     if (!this.isLoaded) return
 
     this.elements.cardCounter.textContent = `${this.currentCardIndex + 1}/${this.cards.length}`
@@ -165,7 +173,7 @@ export class FlashcardApp {
     this.updateButtonStates()
   }
 
-  updateButtonStates() {
+  private updateButtonStates(): void {
     if (!this.isLoaded) return
 
     this.elements.prevButton.disabled = this.cards.length <= 1
@@ -173,7 +181,7 @@ export class FlashcardApp {
     this.elements.shuffleButton.disabled = this.cards.length <= 1
   }
 
-  handleKeyPress(event) {
+  private handleKeyPress(event: KeyboardEvent): void {
     if (!this.isLoaded) return
 
     switch (event.code) {

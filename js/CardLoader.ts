@@ -1,18 +1,18 @@
-export class CardLoader {
-  constructor() {
-    this.cards = []
-    this.deckInfo = {}
-  }
+import type { FlashCard, DeckInfo, CardData } from './types.js'
 
-  async loadCards(jsonPath = './cards/N2-grammar.json') {
+export class CardLoader {
+  private cards: FlashCard[] = []
+  private deckInfo: DeckInfo = {} as DeckInfo
+
+  async loadCards(jsonPath: string = './cards/N2-grammar.json'): Promise<{ cards: FlashCard[], deckInfo: DeckInfo }> {
     try {
-      const response = await fetch(jsonPath)
+      const response: Response = await fetch(jsonPath)
       
       if (!response.ok) {
         throw new Error(`Failed to load cards: ${response.status} ${response.statusText}`)
       }
 
-      const data = await response.json()
+      const data: CardData = await response.json()
       
       if (!data.cards || !Array.isArray(data.cards)) {
         throw new Error('Invalid card data format: missing cards array')
@@ -39,18 +39,18 @@ export class CardLoader {
     }
   }
 
-  getCards() {
+  getCards(): FlashCard[] {
     return this.cards
   }
 
-  getDeckInfo() {
+  getDeckInfo(): DeckInfo {
     return this.deckInfo
   }
 
-  shuffleCards() {
-    const shuffled = [...this.cards]
+  shuffleCards(): FlashCard[] {
+    const shuffled: FlashCard[] = [...this.cards]
     for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j: number = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
     }
     this.cards = shuffled
