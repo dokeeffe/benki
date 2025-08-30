@@ -188,9 +188,13 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, box-shadow 0.2s ease;
   backface-visibility: hidden;
   border: 1px solid var(--border-color);
+}
+
+.flashcard:hover .card-side {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .card-front {
@@ -345,12 +349,6 @@ body {
 }
 
 /* Controls */
-.card-controls {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
 .navigation-controls {
   display: flex;
   justify-content: space-between;
@@ -397,8 +395,13 @@ body {
   }
   
   .navigation-controls {
-    flex-direction: column;
     gap: 0.75rem;
+  }
+  
+  .navigation-controls .button {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
   }
   
   .study-controls {
@@ -406,7 +409,7 @@ body {
     align-items: center;
   }
   
-  .button {
+  .study-controls .button {
     width: 100%;
     max-width: 200px;
   }

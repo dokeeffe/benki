@@ -22,7 +22,6 @@ export class FlashcardApp {
       cardCounter: document.getElementById('card-counter'),
       progressFill: document.getElementById('progress-fill'),
       
-      flipButton: document.getElementById('flip-button'),
       prevButton: document.getElementById('prev-button'),
       nextButton: document.getElementById('next-button'),
       shuffleButton: document.getElementById('shuffle-button'),
@@ -37,11 +36,17 @@ export class FlashcardApp {
 
   bindEvents() {
     this.elements.retryButton.addEventListener('click', () => this.loadCards())
-    this.elements.flipButton.addEventListener('click', () => this.flipCard())
     this.elements.prevButton.addEventListener('click', () => this.previousCard())
     this.elements.nextButton.addEventListener('click', () => this.nextCard())
     this.elements.shuffleButton.addEventListener('click', () => this.shuffleDeck())
     this.elements.resetProgressButton.addEventListener('click', () => this.resetProgress())
+
+    // Add tap-to-flip functionality to the flashcard
+    const flashcard = document.getElementById('flashcard')
+    if (flashcard) {
+      flashcard.addEventListener('click', () => this.flipCard())
+      flashcard.style.cursor = 'pointer'
+    }
 
     document.addEventListener('keydown', (e) => this.handleKeyPress(e))
   }
@@ -101,8 +106,7 @@ export class FlashcardApp {
   flipCard() {
     if (!this.isLoaded) return
 
-    const isFlipped = this.cardRenderer.flipCard()
-    this.elements.flipButton.textContent = isFlipped ? 'Show Front' : 'Flip Card'
+    this.cardRenderer.flipCard()
   }
 
   nextCard() {
@@ -127,7 +131,6 @@ export class FlashcardApp {
 
   resetCardFlip() {
     this.cardRenderer.setFlipped(false)
-    this.elements.flipButton.textContent = 'Flip Card'
   }
 
   shuffleDeck() {
