@@ -1,0 +1,37 @@
+{
+  "name": "N2 Grammar - 以来/から/など",
+  "description": "Grammar patterns from Nihongo Soumatome N2",
+  "version": "1.0",
+  "cards": [
+    {
+      "id": "irai-001",
+      "front": {
+        "text": "日本に来て**以来**、毎日勉強している。",
+        "focus": "以来"
+      },
+      "back": {
+        "meaning": "Since...",
+        "description": "Used to express 'since' or 'ever since' a specific point in time. Emphasizes that the action/state has continued from that point until now.",
+        "rule": "Vて + 以来",
+        "nuance": "More formal than から. Often used for significant life events or turning points.",
+        "example_translation": "Ever since I came to Japan, I've been studying every day."
+      },
+      "tags": ["grammar", "time", "formal", "n2"]
+    },
+    {
+      "id": "noni-001", 
+      "front": {
+        "text": "一生懸命勉強した**のに**、試験に落ちた。",
+        "focus": "のに"
+      },
+      "back": {
+        "meaning": "Despite / Even though / But",
+        "description": "Expresses contrast or unexpected result. Shows disappointment or surprise that the expected outcome didn't happen.",
+        "rule": "Plain form + のに",
+        "nuance": "Stronger emotional emphasis than でも or が. Shows speaker's disappointment.",
+        "example_translation": "Despite studying hard, I failed the exam."
+      },
+      "tags": ["grammar", "contrast", "emotion", "n2"]
+    }
+  ]
+}

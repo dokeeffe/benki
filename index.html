@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benki - Japanese Flashcards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <h1 class="app-title">勉気 Benki</h1>
+        <div class="deck-info">
+          <span id="deck-name">Loading...</span>
+          <span id="card-counter">0/0</span>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div id="loading" class="loading">
+          <div class="loading-spinner"></div>
+          <p>Loading flashcards...</p>
+        </div>
+
+        <div id="error-message" class="error-message hidden">
+          <h3>Error Loading Cards</h3>
+          <p id="error-text"></p>
+          <button id="retry-button" class="button button-primary">Retry</button>
+        </div>
+
+        <div id="flashcard-container" class="flashcard-container hidden">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+
+          <div id="flashcard" class="flashcard">
+            <div class="card-side card-front">
+              <div class="focus-grammar" id="focus-grammar"></div>
+              <div class="japanese-text" id="japanese-text"></div>
+            </div>
+            
+            <div class="card-side card-back hidden">
+              <div class="back-content">
+                <div class="meaning" id="meaning"></div>
+                <div class="description" id="description"></div>
+                <div class="rule" id="rule"></div>
+                <div class="nuance" id="nuance"></div>
+                <div class="translation" id="translation"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-controls">
+            <button id="flip-button" class="button button-primary">Flip Card</button>
+          </div>
+
+          <div class="navigation-controls">
+            <button id="prev-button" class="button button-secondary">← Previous</button>
+            <button id="next-button" class="button button-secondary">Next →</button>
+          </div>
+
+          <div class="study-controls">
+            <button id="shuffle-button" class="button button-outline">🔀 Shuffle</button>
+            <button id="reset-progress" class="button button-outline">Reset Progress</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+export class ProgressTracker {
+  constructor(deckName) {
+    this.deckName = deckName
+    this.storageKey = `benki_progress_${this.sanitizeDeckName(deckName)}`
+    this.progress = this.loadProgress()
+  }
+
+  sanitizeDeckName(name) {
+    return name.toLowerCase().replace(/[^a-z0-9]/g, '_')
+  }
+
+  loadProgress() {
+    try {
+      const stored = localStorage.getItem(this.storageKey)
+      if (stored) {
+        return JSON.parse(stored)
+      }
+    } catch (error) {
+      console.warn('Failed to load progress from localStorage:', error)
+    }
+
+    return {
+      cardsSeen: new Set(),
+      cardsCorrect: new Set(),
+      cardsIncorrect: new Set(),
+      totalCards: 0,
+      lastStudied: null,
+      studySessions: 0
+    }
+  }
+
+  saveProgress() {
+    try {
+      const progressData = {
+        ...this.progress,
+        cardsSeen: Array.from(this.progress.cardsSeen),
+        cardsCorrect: Array.from(this.progress.cardsCorrect),
+        cardsIncorrect: Array.from(this.progress.cardsIncorrect)
+      }
+      localStorage.setItem(this.storageKey, JSON.stringify(progressData))
+    } catch (error) {
+      console.warn('Failed to save progress to localStorage:', error)
+    }
+  }
+
+  initializeDeck(totalCards) {
+    this.progress.totalCards = totalCards
+    if (this.progress.cardsSeen.size === 0) {
+      this.progress.studySessions = 1
+    }
+    this.saveProgress()
+  }
+
+  markCardSeen(cardId) {
+    this.progress.cardsSeen.add(cardId)
+    this.progress.lastStudied = Date.now()
+    this.saveProgress()
+  }
+
+  markCardCorrect(cardId) {
+    this.progress.cardsCorrect.add(cardId)
+    this.progress.cardsIncorrect.delete(cardId)
+    this.markCardSeen(cardId)
+  }
+
+  markCardIncorrect(cardId) {
+    this.progress.cardsIncorrect.add(cardId)
+    this.progress.cardsCorrect.delete(cardId)
+    this.markCardSeen(cardId)
+  }
+
+  getProgress() {
+    return {
+      seen: this.progress.cardsSeen.size,
+      correct: this.progress.cardsCorrect.size,
+      incorrect: this.progress.cardsIncorrect.size,
+      total: this.progress.totalCards,
+      percentageSeen: this.progress.totalCards > 0 ? 
+        (this.progress.cardsSeen.size / this.progress.totalCards) * 100 : 0,
+      percentageCorrect: this.progress.cardsSeen.size > 0 ? 
+        (this.progress.cardsCorrect.size / this.progress.cardsSeen.size) * 100 : 0
+    }
+  }
+
+  isCardSeen(cardId) {
+    return this.progress.cardsSeen.has(cardId)
+  }
+
+  isCardCorrect(cardId) {
+    return this.progress.cardsCorrect.has(cardId)
+  }
+
+  isCardIncorrect(cardId) {
+    return this.progress.cardsIncorrect.has(cardId)
+  }
+
+  resetProgress() {
+    this.progress = {
+      cardsSeen: new Set(),
+      cardsCorrect: new Set(),
+      cardsIncorrect: new Set(),
+      totalCards: this.progress.totalCards,
+      lastStudied: null,
+      studySessions: this.progress.studySessions + 1
+    }
+    this.saveProgress()
+  }
+}
