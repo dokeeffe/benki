@@ -106,11 +106,11 @@ export default defineConfig({
 benki/
 ├── cards/                 # JSON flashcard data
 │   └── N2-grammar.json
-├── js/                    # JavaScript modules
-│   ├── FlashcardApp.js   # Main application logic
-│   ├── CardLoader.js     # JSON loading and parsing
-│   ├── CardRenderer.js   # Card display and markdown
-│   └── ProgressTracker.js # LocalStorage progress
+├── src/                    # JavaScript modules
+│   ├── FlashcardApp.ts   # Main application logic
+│   ├── CardLoader.ts     # JSON loading and parsing
+│   ├── CardRenderer.ts   # Card display and markdown
+│   └── ProgressTracker.ts # LocalStorage progress
 ├── index.html            # Main HTML file
 ├── main.js              # Application entry point
 ├── style.css            # All CSS styles
