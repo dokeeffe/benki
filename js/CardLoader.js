@@ -4,7 +4,7 @@ export class CardLoader {
     this.deckInfo = {}
   }
 
-  async loadCards(jsonPath = '/cards/N2-grammar.json') {
+  async loadCards(jsonPath = './cards/N2-grammar.json') {
     try {
       const response = await fetch(jsonPath)
       

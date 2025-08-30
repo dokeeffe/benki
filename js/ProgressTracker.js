@@ -13,7 +13,16 @@ export class ProgressTracker {
     try {
       const stored = localStorage.getItem(this.storageKey)
       if (stored) {
-        return JSON.parse(stored)
+        const parsed = JSON.parse(stored)
+        // Convert arrays back to Sets
+        return {
+          cardsSeen: new Set(parsed.cardsSeen || []),
+          cardsCorrect: new Set(parsed.cardsCorrect || []),
+          cardsIncorrect: new Set(parsed.cardsIncorrect || []),
+          totalCards: parsed.totalCards || 0,
+          lastStudied: parsed.lastStudied || null,
+          studySessions: parsed.studySessions || 0
+        }
       }
     } catch (error) {
       console.warn('Failed to load progress from localStorage:', error)
