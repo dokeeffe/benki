@@ -1,8 +1,713 @@
 {
-  "name": "N2 Grammar - 以来/から/など",
-  "description": "Grammar patterns from Nihongo Soumatome N2",
-  "version": "1.0",
+  "name": "N2 Grammar - Extended Patterns",
+  "description": "Comprehensive N2 grammar patterns with detailed explanations",
+  "version": "2.0",
   "cards": [
+    {
+      "id": "ue-ni-001",
+      "front": {
+        "text": "できる**上に**、安い。",
+        "focus": "上に"
+      },
+      "back": {
+        "meaning": "Moreover / In addition to",
+        "description": "Used to add positive information on top of what was already mentioned. Both clauses are typically positive.",
+        "rule": "Verb dictionary form/い-adj/な-adj + 上に",
+        "nuance": "Emphasizes that there are multiple good points. More formal than それに.",
+        "example_translation": "Not only is it functional, but it's also cheap."
+      },
+      "tags": ["grammar", "addition", "formal", "n2"]
+    },
+    {
+      "id": "ue-de-001",
+      "front": {
+        "text": "よく考えた**上で**決めてください。",
+        "focus": "上で"
+      },
+      "back": {
+        "meaning": "After doing X, then Y / Based on X",
+        "description": "Indicates that one action is done as preparation or basis for another. Shows careful consideration or deliberation.",
+        "rule": "Verb た-form + 上で",
+        "nuance": "Implies thoroughness and careful thought. More formal than てから.",
+        "example_translation": "Please decide after thinking it over carefully."
+      },
+      "tags": ["grammar", "sequence", "formal", "n2"]
+    },
+    {
+      "id": "ue-wa-001",
+      "front": {
+        "text": "選ばれた**上は**、責任を持つ。",
+        "focus": "上は"
+      },
+      "back": {
+        "meaning": "Since / Now that (with determination)",
+        "description": "Used when accepting a situation and showing determination or resolve. Often used for advice or expressing strong commitment.",
+        "rule": "Verb passive form + 上は",
+        "nuance": "Shows acceptance of responsibility or circumstances. Formal and determined tone.",
+        "example_translation": "Since I was chosen, I'll take responsibility."
+      },
+      "tags": ["grammar", "determination", "formal", "n2"]
+    },
+    {
+      "id": "ue-dewa-001",
+      "front": {
+        "text": "天気図**の上では**晴れです。",
+        "focus": "の上では"
+      },
+      "back": {
+        "meaning": "According to / Based on",
+        "description": "Used to state information based on a specific source or document. Reality might differ from what the source indicates.",
+        "rule": "Noun + の上では",
+        "nuance": "Implies the information is theoretical or might not match reality.",
+        "example_translation": "According to the weather map, it will be sunny."
+      },
+      "tags": ["grammar", "source", "formal", "n2"]
+    },
+    {
+      "id": "muke-001",
+      "front": {
+        "text": "初心者**向け**の本です。",
+        "focus": "向け"
+      },
+      "back": {
+        "meaning": "Aimed at / Suited for / Designed for",
+        "description": "Indicates the target audience or intended purpose of something.",
+        "rule": "Noun + 向け",
+        "nuance": "Common in product descriptions and marketing. Neutral tone.",
+        "example_translation": "This is a book for beginners."
+      },
+      "tags": ["grammar", "target", "neutral", "n2"]
+    },
+    {
+      "id": "shidai-de-001",
+      "front": {
+        "text": "天気**次第で**予定が変わる。",
+        "focus": "次第で"
+      },
+      "back": {
+        "meaning": "Depending on / Based on",
+        "description": "Shows that the outcome depends entirely on a certain factor or condition.",
+        "rule": "Noun + 次第で/次第だ",
+        "nuance": "Emphasizes complete dependence on the stated factor.",
+        "example_translation": "The plans will change depending on the weather."
+      },
+      "tags": ["grammar", "dependency", "neutral", "n2"]
+    },
+    {
+      "id": "shidai-002",
+      "front": {
+        "text": "準備ができ**次第**連絡します。",
+        "focus": "次第"
+      },
+      "back": {
+        "meaning": "As soon as / Immediately when",
+        "description": "Used to indicate that something will happen immediately after another action is completed. Formal expression.",
+        "rule": "Verb た-form + 次第",
+        "nuance": "Formal and business-like. Shows promptness and reliability.",
+        "example_translation": "I'll contact you as soon as the preparations are ready."
+      },
+      "tags": ["grammar", "timing", "formal", "n2"]
+    },
+    {
+      "id": "shidai-desu-001",
+      "front": {
+        "text": "遅れて申し訳ありません。電車が遅れた**次第です**。",
+        "focus": "次第です"
+      },
+      "back": {
+        "meaning": "That's how it happened / These are the circumstances",
+        "description": "Formal way to explain the reasons or circumstances behind something. Often used in apologies or explanations.",
+        "rule": "Verb た-form + 次第です",
+        "nuance": "Very formal and polite. Used in business or formal situations.",
+        "example_translation": "I apologize for being late. The train was delayed - that's what happened."
+      },
+      "tags": ["grammar", "explanation", "very-formal", "n2"]
+    },
+    {
+      "id": "ni-kotaete-001",
+      "front": {
+        "text": "お客様のご意見**に答えて**改善しました。",
+        "focus": "に答えて"
+      },
+      "back": {
+        "meaning": "In response to / Answering to",
+        "description": "Used when taking action based on someone's request, opinion, or expectation.",
+        "rule": "Noun + に答えて",
+        "nuance": "Shows responsiveness and consideration for others' input.",
+        "example_translation": "We made improvements in response to customer feedback."
+      },
+      "tags": ["grammar", "response", "formal", "n2"]
+    },
+    {
+      "id": "ni-taishite-001",
+      "front": {
+        "text": "目上の人**に対して**失礼だった。",
+        "focus": "に対して"
+      },
+      "back": {
+        "meaning": "Toward / Against / In relation to",
+        "description": "Shows the direction of an action, feeling, or attitude toward a person or thing.",
+        "rule": "Noun + に対して",
+        "nuance": "Can indicate both positive and negative relationships or actions.",
+        "example_translation": "I was rude toward my superior."
+      },
+      "tags": ["grammar", "direction", "relationship", "n2"]
+    },
+    {
+      "id": "ni-yori-001",
+      "front": {
+        "text": "新しい法律**により**規制が厳しくなった。",
+        "focus": "により"
+      },
+      "back": {
+        "meaning": "Due to / Because of / By means of",
+        "description": "Formal way to express cause, reason, or method. More formal than ので or から.",
+        "rule": "Noun + により/によって",
+        "nuance": "Very formal, often used in official documents and news.",
+        "example_translation": "Regulations became stricter due to the new law."
+      },
+      "tags": ["grammar", "cause", "formal", "n2"]
+    },
+    {
+      "id": "ni-kakawatte-001",
+      "front": {
+        "text": "この事件**に関わって**いる人は多い。",
+        "focus": "に関わって"
+      },
+      "back": {
+        "meaning": "Involved in / Connected to / Concerning",
+        "description": "Shows involvement or connection with something, often used in serious contexts.",
+        "rule": "Noun + に関わって/に関わる",
+        "nuance": "Can imply responsibility or participation, context determines positive/negative connotation.",
+        "example_translation": "Many people are involved in this incident."
+      },
+      "tags": ["grammar", "involvement", "serious", "n2"]
+    },
+    {
+      "id": "nagara-001",
+      "front": {
+        "text": "危険と**知りながら**山に登った。",
+        "focus": "ながら"
+      },
+      "back": {
+        "meaning": "While knowing / Despite knowing",
+        "description": "Used when someone acts despite being aware of something (often negative consequences).",
+        "rule": "Verb stem + ながら",
+        "nuance": "Often implies criticism or surprise at the contradictory behavior.",
+        "example_translation": "He climbed the mountain despite knowing it was dangerous."
+      },
+      "tags": ["grammar", "contrast", "criticism", "n2"]
+    },
+    {
+      "id": "tsutsu-001",
+      "front": {
+        "text": "忙しいと言い**つつ**、毎日遊んでいる。",
+        "focus": "つつ"
+      },
+      "back": {
+        "meaning": "While (doing contradictory things)",
+        "description": "Used when two contradictory actions or states occur simultaneously. Often implies criticism.",
+        "rule": "Verb stem + つつ",
+        "nuance": "Literary and formal. Often used to point out contradictions or hypocrisy.",
+        "example_translation": "While saying he's busy, he plays every day."
+      },
+      "tags": ["grammar", "contradiction", "formal", "n2"]
+    },
+    {
+      "id": "tsutsu-aru-001",
+      "front": {
+        "text": "技術は進歩し**つつある**。",
+        "focus": "つつある"
+      },
+      "back": {
+        "meaning": "In the process of / Gradually",
+        "description": "Indicates that something is in the process of changing or developing. More formal than ている.",
+        "rule": "Verb stem + つつある",
+        "nuance": "Formal expression often used in written Japanese or formal speech.",
+        "example_translation": "Technology is gradually advancing."
+      },
+      "tags": ["grammar", "progress", "formal", "n2"]
+    },
+    {
+      "id": "kuse-shite-001",
+      "front": {
+        "text": "何も**知らないくせに**文句を言う。",
+        "focus": "くせに"
+      },
+      "back": {
+        "meaning": "Even though / Despite (with criticism)",
+        "description": "Strong expression used to criticize someone for doing something despite lacking qualification or knowledge.",
+        "rule": "Plain form + くせに",
+        "nuance": "Contains strong criticism and annoyance. Quite harsh expression.",
+        "example_translation": "He complains even though he doesn't know anything."
+      },
+      "tags": ["grammar", "criticism", "harsh", "n2"]
+    },
+    {
+      "id": "beki-dewa-nai-001",
+      "front": {
+        "text": "そんなこと**すべきではない**。",
+        "focus": "べきではない"
+      },
+      "back": {
+        "meaning": "Should not / Ought not to",
+        "description": "Strong expression of moral obligation or social expectation in the negative form.",
+        "rule": "Verb dictionary form + べきではない/べきでない",
+        "nuance": "Formal and strong. Used for moral imperatives and social rules.",
+        "example_translation": "You should not do such things."
+      },
+      "tags": ["grammar", "obligation", "moral", "n2"]
+    },
+    {
+      "id": "zaruwoenai-001",
+      "front": {
+        "text": "**続けざるを得ない**状況です。",
+        "focus": "ざるを得ない"
+      },
+      "back": {
+        "meaning": "Have no choice but to / Cannot help but",
+        "description": "Formal expression indicating that one is compelled to do something against their preference.",
+        "rule": "Verb ない-form (drop ない) + ざるを得ない",
+        "nuance": "Very formal. Shows unwillingness but acceptance of necessity.",
+        "example_translation": "It's a situation where I have no choice but to continue."
+      },
+      "tags": ["grammar", "compulsion", "formal", "n2"]
+    },
+    {
+      "id": "koto-ni-natte-001",
+      "front": {
+        "text": "会議は明日**行われることになっている**。",
+        "focus": "ことになっている"
+      },
+      "back": {
+        "meaning": "It has been decided that / It is arranged that",
+        "description": "Indicates that something has been decided or arranged, often by others or by rules/custom.",
+        "rule": "Verb dictionary form + ことになっている",
+        "nuance": "Shows that the decision was made by someone else or is an established rule.",
+        "example_translation": "It has been decided that the meeting will be held tomorrow."
+      },
+      "tags": ["grammar", "arrangement", "passive-decision", "n2"]
+    },
+    {
+      "id": "ni-suginai-001",
+      "front": {
+        "text": "それは言い間違い**にすぎない**。",
+        "focus": "にすぎない"
+      },
+      "back": {
+        "meaning": "Nothing more than / Just / Merely",
+        "description": "Used to minimize or downplay the significance of something.",
+        "rule": "Noun + にすぎない",
+        "nuance": "Often used to make something seem less important or serious than it appears.",
+        "example_translation": "That's nothing more than a slip of the tongue."
+      },
+      "tags": ["grammar", "minimizing", "formal", "n2"]
+    },
+    {
+      "id": "ni-atari-001",
+      "front": {
+        "text": "システムを利用**するにあたり**注意事項があります。",
+        "focus": "にあたり"
+      },
+      "back": {
+        "meaning": "When / Upon / In the course of",
+        "description": "Formal expression used when beginning or undertaking something important.",
+        "rule": "Verb dictionary form + にあたり/にあたって",
+        "nuance": "Very formal, often used in official contexts and ceremonies.",
+        "example_translation": "There are precautions when using the system."
+      },
+      "tags": ["grammar", "formal", "beginning", "n2"]
+    },
+    {
+      "id": "ni-sotte-001",
+      "front": {
+        "text": "マニュアル**に沿って**作業してください。",
+        "focus": "に沿って"
+      },
+      "back": {
+        "meaning": "In accordance with / Along with / Following",
+        "description": "Used when doing something according to guidelines, rules, or a plan.",
+        "rule": "Noun + に沿って",
+        "nuance": "Shows compliance with established procedures or guidelines.",
+        "example_translation": "Please work according to the manual."
+      },
+      "tags": ["grammar", "compliance", "formal", "n2"]
+    },
+    {
+      "id": "ni-watatte-001",
+      "front": {
+        "text": "広い範囲**にわたって**調査が行われた。",
+        "focus": "にわたって"
+      },
+      "back": {
+        "meaning": "Over / Across / Spanning",
+        "description": "Used to indicate something that extends over a wide range of time, space, or scope.",
+        "rule": "Noun + にわたって/にわたり",
+        "nuance": "Emphasizes the breadth or extent of something. Formal tone.",
+        "example_translation": "The investigation was conducted over a wide range."
+      },
+      "tags": ["grammar", "extent", "formal", "n2"]
+    },
+    {
+      "id": "kko-nai-001",
+      "front": {
+        "text": "そんなこと**覚えられっこない**。",
+        "focus": "っこない"
+      },
+      "back": {
+        "meaning": "Impossible to / Can't possibly",
+        "description": "Casual expression indicating that something is impossible or very unlikely to happen.",
+        "rule": "Verb potential form + っこない",
+        "nuance": "Casual and colloquial. Shows strong doubt about possibility.",
+        "example_translation": "There's no way I can remember such things."
+      },
+      "tags": ["grammar", "impossibility", "casual", "n2"]
+    },
+    {
+      "id": "kanai-001",
+      "front": {
+        "text": "彼はそんなこと**言いかねない**。",
+        "focus": "かねない"
+      },
+      "back": {
+        "meaning": "Might well / Could possibly (negative outcome)",
+        "description": "Used to express concern that something undesirable might happen, often based on someone's character.",
+        "rule": "Verb stem + かねない",
+        "nuance": "Shows worry about negative possibilities. Often used for character-based predictions.",
+        "example_translation": "He might well say such things."
+      },
+      "tags": ["grammar", "possibility", "concern", "n2"]
+    },
+    {
+      "id": "kaneru-001",
+      "front": {
+        "text": "そのご提案は**受けかねます**。",
+        "focus": "かねる"
+      },
+      "back": {
+        "meaning": "Cannot / Unable to (polite refusal)",
+        "description": "Very polite and formal way to refuse or indicate inability to do something.",
+        "rule": "Verb stem + かねる/かねます",
+        "nuance": "Extremely polite business language. Used for diplomatic refusals.",
+        "example_translation": "I'm afraid I cannot accept that proposal."
+      },
+      "tags": ["grammar", "refusal", "very-formal", "n2"]
+    },
+    {
+      "id": "gatai-001",
+      "front": {
+        "text": "その話は**信じがたい**。",
+        "focus": "がたい"
+      },
+      "back": {
+        "meaning": "Hard to / Difficult to",
+        "description": "Formal expression indicating that something is difficult to do or believe.",
+        "rule": "Verb stem + がたい",
+        "nuance": "Formal and literary. Often used for emotional or psychological difficulty.",
+        "example_translation": "That story is hard to believe."
+      },
+      "tags": ["grammar", "difficulty", "formal", "n2"]
+    },
+    {
+      "id": "koto-kara-001",
+      "front": {
+        "text": "富士山が見える**ことから**、天気がいいとわかる。",
+        "focus": "ことから"
+      },
+      "back": {
+        "meaning": "From the fact that / Because / Since",
+        "description": "Used to state a reason or basis for making a judgment, often based on observable facts.",
+        "rule": "Verb dictionary/た form + ことから",
+        "nuance": "Shows logical reasoning based on evidence or observable facts.",
+        "example_translation": "From the fact that Mt. Fuji is visible, we can tell the weather is good."
+      },
+      "tags": ["grammar", "reasoning", "evidence", "n2"]
+    },
+    {
+      "id": "no-koto-dakara-001",
+      "front": {
+        "text": "彼**のことだから**きっと成功する。",
+        "focus": "のことだから"
+      },
+      "back": {
+        "meaning": "Knowing him/her / Given his/her character",
+        "description": "Used to make predictions about someone's behavior based on their known characteristics.",
+        "rule": "Person + のことだから",
+        "nuance": "Shows familiarity with someone's character traits and habits.",
+        "example_translation": "Knowing him, he'll surely succeed."
+      },
+      "tags": ["grammar", "character", "prediction", "n2"]
+    },
+    {
+      "id": "koto-naku-001",
+      "front": {
+        "text": "**休むことなく**働き続けた。",
+        "focus": "ことなく"
+      },
+      "back": {
+        "meaning": "Without doing / Without",
+        "description": "Formal way to express doing something without doing another action.",
+        "rule": "Verb dictionary form + ことなく",
+        "nuance": "More formal than ないで. Often used in written Japanese.",
+        "example_translation": "I continued working without taking a break."
+      },
+      "tags": ["grammar", "without", "formal", "n2"]
+    },
+    {
+      "id": "nai-koto-niwa-001",
+      "front": {
+        "text": "やってみ**ないことには**わから**ない**。",
+        "focus": "ないことには"
+      },
+      "back": {
+        "meaning": "Unless / Without doing X, Y cannot happen",
+        "description": "Used to express that something cannot be determined or achieved unless a certain action is taken first.",
+        "rule": "Verb ない form + ことには",
+        "nuance": "Emphasizes the necessity of the first action for the second to be possible.",
+        "example_translation": "You won't know unless you try it."
+      },
+      "tags": ["grammar", "necessity", "condition", "n2"]
+    },
+    {
+      "id": "te-touzen-001",
+      "front": {
+        "text": "そんな態度では**嫌われて当然だ**。",
+        "focus": "て当然だ"
+      },
+      "back": {
+        "meaning": "It's natural that / No wonder / Of course",
+        "description": "Used to express that an outcome is expected or inevitable given the circumstances.",
+        "rule": "Verb て form + 当然だ",
+        "nuance": "Shows that the result is predictable and justified by the situation.",
+        "example_translation": "With that attitude, it's no wonder you're disliked."
+      },
+      "tags": ["grammar", "inevitability", "judgment", "n2"]
+    },
+    {
+      "id": "no-mo-mottomo-001",
+      "front": {
+        "text": "怒る**のももっともだ**。",
+        "focus": "のももっともだ"
+      },
+      "back": {
+        "meaning": "It's reasonable to / No wonder / Understandable",
+        "description": "Used to show understanding or agreement with someone's feelings or actions.",
+        "rule": "Verb dictionary form + のももっともだ",
+        "nuance": "Shows empathy and understanding for someone's reaction.",
+        "example_translation": "It's understandable that you're angry."
+      },
+      "tags": ["grammar", "understanding", "empathy", "n2"]
+    },
+    {
+      "id": "mo-touzen-001",
+      "front": {
+        "text": "新品**も当然だ**。",
+        "focus": "も当然だ"
+      },
+      "back": {
+        "meaning": "Of course / Naturally / It's only natural",
+        "description": "Used to express that something is obvious or expected in the given situation.",
+        "rule": "Noun + も当然だ",
+        "nuance": "Shows that the outcome is so predictable it's almost inevitable.",
+        "example_translation": "Of course it's new."
+      },
+      "tags": ["grammar", "obviousness", "expectation", "n2"]
+    },
+    {
+      "id": "dake-mashi-001",
+      "front": {
+        "text": "給料は安いが、ある**だけましだ**。",
+        "focus": "だけましだ"
+      },
+      "back": {
+        "meaning": "Should be grateful that / At least / Better than nothing",
+        "description": "Used to express gratitude for having something, even if it's not ideal, by comparing to a worse situation.",
+        "rule": "Verb dictionary form + だけましだ",
+        "nuance": "Shows acceptance of a less-than-perfect situation by focusing on the positive aspect.",
+        "example_translation": "The salary is low, but I should be grateful to have one at all."
+      },
+      "tags": ["grammar", "gratitude", "acceptance", "n2"]
+    },
+    {
+      "id": "dake-atte-001",
+      "front": {
+        "text": "一流ホテル**だけあって**サービスが素晴らしい。",
+        "focus": "だけあって"
+      },
+      "back": {
+        "meaning": "As expected of / Being what it is / True to its reputation",
+        "description": "Used to emphasize that something meets or exceeds expectations based on its reputation or nature.",
+        "rule": "Noun + だけあって",
+        "nuance": "Shows that the result matches or confirms one's expectations about quality or nature.",
+        "example_translation": "As expected of a first-class hotel, the service is wonderful."
+      },
+      "tags": ["grammar", "expectation", "reputation", "n2"]
+    },
+    {
+      "id": "bakari-ka-001",
+      "front": {
+        "text": "成績がいい**ばかりか**、スポーツ**も**得意だ。",
+        "focus": "ばかりか"
+      },
+      "back": {
+        "meaning": "Not only... but also / Moreover",
+        "description": "Used to add additional positive information, often exceeding expectations.",
+        "rule": "Verb/Adj + ばかりか",
+        "nuance": "Emphasizes that there are multiple positive aspects, often more than expected.",
+        "example_translation": "Not only does he have good grades, but he's also good at sports."
+      },
+      "tags": ["grammar", "addition", "exceeding-expectation", "n2"]
+    },
+    {
+      "id": "bakari-ni-001",
+      "front": {
+        "text": "あの飛行機に乗った**ばかりに**事故に遭った。",
+        "focus": "ばかりに"
+      },
+      "back": {
+        "meaning": "Just because / If only it hadn't been for",
+        "description": "Used to express regret about a single action that led to negative consequences.",
+        "rule": "Verb た form + ばかりに",
+        "nuance": "Strong regret and emphasis that one small action caused big problems.",
+        "example_translation": "Just because I took that flight, I got into an accident."
+      },
+      "tags": ["grammar", "regret", "cause", "n2"]
+    },
+    {
+      "id": "nomi-narazu-001",
+      "front": {
+        "text": "日本**のみならず**外国で**も**有名だ。",
+        "focus": "のみならず"
+      },
+      "back": {
+        "meaning": "Not only... but also / Moreover",
+        "description": "Formal expression used to add information, emphasizing that something extends beyond the expected scope.",
+        "rule": "Noun + のみならず",
+        "nuance": "Very formal, often used in written Japanese and formal speeches.",
+        "example_translation": "He's famous not only in Japan but also abroad."
+      },
+      "tags": ["grammar", "addition", "formal", "n2"]
+    },
+    {
+      "id": "dewa-nai-ka-001",
+      "front": {
+        "text": "みんなで頑張ろう**ではないか**。",
+        "focus": "ではないか"
+      },
+      "back": {
+        "meaning": "Let's / Why don't we / Shouldn't we",
+        "description": "Used to make strong suggestions or express emphasis. Can be used for encouragement or criticism.",
+        "rule": "Verb volitional form + ではないか",
+        "nuance": "Strong and emphatic. Can sound encouraging or critical depending on context.",
+        "example_translation": "Let's all work hard together!"
+      },
+      "tags": ["grammar", "suggestion", "emphasis", "n2"]
+    },
+    {
+      "id": "you-ga-nai-001",
+      "front": {
+        "text": "もう**言いようがない**。",
+        "focus": "ようがない"
+      },
+      "back": {
+        "meaning": "There's no way to / Impossible to / Cannot",
+        "description": "Used when there's no method or possibility to do something.",
+        "rule": "Verb stem + ようがない",
+        "nuance": "Shows complete impossibility or lack of means to accomplish something.",
+        "example_translation": "There's no way to say it anymore."
+      },
+      "tags": ["grammar", "impossibility", "methods", "n2"]
+    },
+    {
+      "id": "ka-no-you-001",
+      "front": {
+        "text": "泣いている**かのようだ**。",
+        "focus": "かのようだ"
+      },
+      "back": {
+        "meaning": "As if / Like / As though",
+        "description": "Used to describe something by comparing it to something else, often for vivid description.",
+        "rule": "Verb plain form + かのようだ/かのような",
+        "nuance": "Literary and formal. Creates vivid imagery through comparison.",
+        "example_translation": "It's as if he's crying."
+      },
+      "tags": ["grammar", "comparison", "literary", "n2"]
+    },
+    {
+      "id": "sou-ni-nai-001",
+      "front": {
+        "text": "今日は**行けそうにない**。",
+        "focus": "そうにない"
+      },
+      "back": {
+        "meaning": "Unlikely to / Probably won't / Doesn't seem like",
+        "description": "Used to express that something is unlikely to happen based on current appearance or circumstances.",
+        "rule": "Verb stem + そうにない",
+        "nuance": "Shows probability judgment based on observable signs or current situation.",
+        "example_translation": "It doesn't look like I can go today."
+      },
+      "tags": ["grammar", "probability", "appearance", "n2"]
+    },
+    {
+      "id": "ni-sai-shite-001",
+      "front": {
+        "text": "申し込む**に際して**書類が必要です。",
+        "focus": "に際して"
+      },
+      "back": {
+        "meaning": "On the occasion of / When / At the time of",
+        "description": "Very formal expression used when something important is happening or beginning.",
+        "rule": "Verb dictionary form/Noun + に際して",
+        "nuance": "Very formal, often used in official contexts and important events.",
+        "example_translation": "Documents are required when applying."
+      },
+      "tags": ["grammar", "formal", "occasion", "n2"]
+    },
+    {
+      "id": "ni-motozuite-001",
+      "front": {
+        "text": "計画**に基づいて**進めています。",
+        "focus": "に基づいて"
+      },
+      "back": {
+        "meaning": "Based on / According to / In accordance with",
+        "description": "Used when something is done following a plan, data, or established foundation.",
+        "rule": "Noun + に基づいて/に基づく",
+        "nuance": "Formal expression showing that actions follow established guidelines or evidence.",
+        "example_translation": "We're proceeding based on the plan."
+      },
+      "tags": ["grammar", "basis", "formal", "n2"]
+    },
+    {
+      "id": "ni-oujite-001",
+      "front": {
+        "text": "必要**に応じて**連絡します。",
+        "focus": "に応じて"
+      },
+      "back": {
+        "meaning": "According to / Depending on / As needed",
+        "description": "Used when actions change or adapt based on circumstances or requirements.",
+        "rule": "Noun + に応じて",
+        "nuance": "Shows flexibility and adaptation to changing situations or needs.",
+        "example_translation": "I'll contact you as needed."
+      },
+      "tags": ["grammar", "adaptation", "flexibility", "n2"]
+    },
+    {
+      "id": "no-moto-de-001",
+      "front": {
+        "text": "青空**の下で**ピクニックをした。",
+        "focus": "の下で"
+      },
+      "back": {
+        "meaning": "Under / Beneath",
+        "description": "Used to indicate physical location under something, or metaphorically under certain conditions.",
+        "rule": "Noun + の下で/の下に",
+        "nuance": "Can be literal (physical location) or metaphorical (conditions, circumstances).",
+        "example_translation": "We had a picnic under the blue sky."
+      },
+      "tags": ["grammar", "location", "conditions", "n2"]
+    },
     {
       "id": "irai-001",
       "front": {
@@ -10,28 +715,328 @@
         "focus": "以来"
       },
       "back": {
-        "meaning": "Since...",
-        "description": "Used to express 'since' or 'ever since' a specific point in time. Emphasizes that the action/state has continued from that point until now.",
+        "meaning": "Since / Ever since",
+        "description": "Used to express continuous action or state from a specific point in time until now.",
         "rule": "Vて + 以来",
-        "nuance": "More formal than から. Often used for significant life events or turning points.",
+        "nuance": "More formal than から. Emphasizes continuity from a significant point in time.",
         "example_translation": "Ever since I came to Japan, I've been studying every day."
       },
-      "tags": ["grammar", "time", "formal", "n2"]
+      "tags": ["grammar", "time", "continuity", "n2"]
     },
     {
-      "id": "noni-001", 
+      "id": "ijou-001",
       "front": {
-        "text": "一生懸命勉強した**のに**、試験に落ちた。",
-        "focus": "のに"
+        "text": "試験を受ける**以上**、合格したい。",
+        "focus": "以上"
       },
       "back": {
-        "meaning": "Despite / Even though / But",
-        "description": "Expresses contrast or unexpected result. Shows disappointment or surprise that the expected outcome didn't happen.",
-        "rule": "Plain form + のに",
-        "nuance": "Stronger emotional emphasis than でも or が. Shows speaker's disappointment.",
-        "example_translation": "Despite studying hard, I failed the exam."
+        "meaning": "Since / Now that / As long as",
+        "description": "Used to express determination or natural consequence based on a decision or situation.",
+        "rule": "Verb dictionary form + 以上 / Noun + である以上",
+        "nuance": "Shows strong determination or logical consequence. More formal than からには.",
+        "example_translation": "Since I'm taking the exam, I want to pass."
       },
-      "tags": ["grammar", "contrast", "emotion", "n2"]
+      "tags": ["grammar", "determination", "consequence", "n2"]
+    },
+    {
+      "id": "kara-niwa-001",
+      "front": {
+        "text": "約束した**からには**最後まで頑張る。",
+        "focus": "からには"
+      },
+      "back": {
+        "meaning": "Since / Now that (with strong determination)",
+        "description": "Expresses strong determination or responsibility based on a commitment or decision made.",
+        "rule": "Verb た form + からには",
+        "nuance": "Stronger than から. Shows moral obligation or strong resolve.",
+        "example_translation": "Since I made a promise, I'll work hard until the end."
+      },
+      "tags": ["grammar", "determination", "commitment", "n2"]
+    },
+    {
+      "id": "ori-niwa-001",
+      "front": {
+        "text": "来日の**折には**ご連絡ください。",
+        "focus": "折には"
+      },
+      "back": {
+        "meaning": "When the opportunity arises / On the occasion of",
+        "description": "Very formal expression used for special occasions or opportunities, often in business contexts.",
+        "rule": "Noun + の折には",
+        "nuance": "Extremely formal and polite. Often used in business correspondence.",
+        "example_translation": "Please contact us when you visit Japan."
+      },
+      "tags": ["grammar", "opportunity", "very-formal", "n2"]
+    },
+    {
+      "id": "kara-iu-to-001",
+      "front": {
+        "text": "お客様の立場**から言うと**不便です。",
+        "focus": "から言うと"
+      },
+      "back": {
+        "meaning": "From the viewpoint of / Speaking from",
+        "description": "Used to express an opinion or judgment from a specific perspective or standpoint.",
+        "rule": "Noun + から言うと/から言えば",
+        "nuance": "Shows that the speaker is considering a specific perspective or role.",
+        "example_translation": "From the customer's viewpoint, it's inconvenient."
+      },
+      "tags": ["grammar", "perspective", "opinion", "n2"]
+    },
+    {
+      "id": "kara-suru-to-001",
+      "front": {
+        "text": "症状**からすると**風邪でしょう。",
+        "focus": "からすると"
+      },
+      "back": {
+        "meaning": "Judging from / Based on / From the looks of",
+        "description": "Used when making a judgment or inference based on observable evidence or signs.",
+        "rule": "Noun + からすると/からすれば",
+        "nuance": "Shows logical deduction based on available evidence or symptoms.",
+        "example_translation": "Judging from the symptoms, it's probably a cold."
+      },
+      "tags": ["grammar", "inference", "evidence", "n2"]
+    },
+    {
+      "id": "kara-shite-001",
+      "front": {
+        "text": "服装**からして**お金持ちだろう。",
+        "focus": "からして"
+      },
+      "back": {
+        "meaning": "Judging from / Starting with / Even just",
+        "description": "Used to make judgments based on appearance or to emphasize that even one aspect is significant.",
+        "rule": "Noun + からして",
+        "nuance": "Emphasizes that the evidence is so clear that judgment is obvious.",
+        "example_translation": "Judging from his clothes, he's probably wealthy."
+      },
+      "tags": ["grammar", "judgment", "appearance", "n2"]
+    },
+    {
+      "id": "kara-miru-to-001",
+      "front": {
+        "text": "外国人**から見ると**日本は不思議な国だ。",
+        "focus": "から見ると"
+      },
+      "back": {
+        "meaning": "From the viewpoint of / As seen by",
+        "description": "Used to express how something appears from a specific person's or group's perspective.",
+        "rule": "Noun + から見ると/から見れば",
+        "nuance": "Emphasizes the subjectivity of perception based on one's background or position.",
+        "example_translation": "From a foreigner's viewpoint, Japan is a mysterious country."
+      },
+      "tags": ["grammar", "perspective", "subjective", "n2"]
+    },
+    {
+      "id": "kara-to-itte-001",
+      "front": {
+        "text": "好き**だからといって**毎日食べるのは良くない。",
+        "focus": "からといって"
+      },
+      "back": {
+        "meaning": "Just because / Even though",
+        "description": "Used to indicate that having one reason doesn't justify a particular action or conclusion.",
+        "rule": "Plain form + からといって",
+        "nuance": "Shows that one reason alone is insufficient to justify the action or conclusion.",
+        "example_translation": "Just because you like it doesn't mean it's good to eat it every day."
+      },
+      "tags": ["grammar", "insufficient-reason", "caution", "n2"]
+    },
+    {
+      "id": "te-kara-de-naito-001",
+      "front": {
+        "text": "手続きし**てからでないと**入れません。",
+        "focus": "てからでないと"
+      },
+      "back": {
+        "meaning": "Unless you do X first / Not until after",
+        "description": "Used to indicate that something cannot happen until after another action is completed.",
+        "rule": "Vて + からでないと/からでなければ",
+        "nuance": "Shows strict sequence requirement - the first action is absolutely necessary.",
+        "example_translation": "You cannot enter unless you complete the procedures first."
+      },
+      "tags": ["grammar", "prerequisite", "sequence", "n2"]
+    },
+    {
+      "id": "kara-ni-kakete-001",
+      "front": {
+        "text": "2017年**から**2019年**にかけて**研究した。",
+        "focus": "から〜にかけて"
+      },
+      "back": {
+        "meaning": "From X to Y / Over the period of",
+        "description": "Used to indicate a range of time or space, often with gradual change or continuous action.",
+        "rule": "Time/Place + から + Time/Place + にかけて",
+        "nuance": "Implies gradual change or continuous action over the stated range.",
+        "example_translation": "I conducted research from 2017 to 2019."
+      },
+      "tags": ["grammar", "range", "duration", "n2"]
+    },
+    {
+      "id": "ni-kakete-wa-001",
+      "front": {
+        "text": "足の速さ**にかけては**誰にも負けない。",
+        "focus": "にかけては"
+      },
+      "back": {
+        "meaning": "When it comes to / In terms of / Regarding",
+        "description": "Used to highlight a particular area of expertise or strength.",
+        "rule": "Noun + にかけては/にかけても",
+        "nuance": "Emphasizes special ability or strong point in a specific area.",
+        "example_translation": "When it comes to running speed, I won't lose to anyone."
+      },
+      "tags": ["grammar", "expertise", "strength", "n2"]
+    },
+    {
+      "id": "to-ka-001",
+      "front": {
+        "text": "会議は中止だ**とか**。",
+        "focus": "とか"
+      },
+      "back": {
+        "meaning": "I heard that / They say that / Something like",
+        "description": "Used to report hearsay or indicate uncertainty about information. Can also mean 'something like' when listing examples.",
+        "rule": "Plain form + とか",
+        "nuance": "Shows the speaker is not certain about the information or is reporting what they heard.",
+        "example_translation": "I heard the meeting was cancelled."
+      },
+      "tags": ["grammar", "hearsay", "uncertainty", "n2"]
+    },
+    {
+      "id": "mai-001",
+      "front": {
+        "text": "二度と行く**まい**。",
+        "focus": "まい"
+      },
+      "back": {
+        "meaning": "Will not / Won't / Shall not",
+        "description": "Strong negative intention or determination. Literary and formal expression.",
+        "rule": "Verb dictionary form + まい (for う-verbs) / Verb stem + まい (for る-verbs)",
+        "nuance": "Very formal and literary. Shows strong negative resolve or prediction.",
+        "example_translation": "I will never go there again."
+      },
+      "tags": ["grammar", "negative-intention", "formal", "n2"]
+    },
+    {
+      "id": "mai-002",
+      "front": {
+        "text": "彼には**わかるまい**。",
+        "focus": "まい"
+      },
+      "back": {
+        "meaning": "Probably won't / Unlikely to",
+        "description": "Used to express doubt or negative expectation about someone else's actions or abilities.",
+        "rule": "Verb dictionary form + まい",
+        "nuance": "Shows speaker's doubt about others' capabilities or likelihood of action.",
+        "example_translation": "He probably won't understand."
+      },
+      "tags": ["grammar", "doubt", "negative-expectation", "n2"]
+    },
+    {
+      "id": "mai-ka-mai-ka-001",
+      "front": {
+        "text": "話そうか話す**まいか**迷っている。",
+        "focus": "まいか"
+      },
+      "back": {
+        "meaning": "Whether to... or not / Should I... or not",
+        "description": "Used to express internal debate or hesitation about doing something.",
+        "rule": "Verb dictionary form + か + Verb stem + まいか",
+        "nuance": "Shows internal conflict and uncertainty about the best course of action.",
+        "example_translation": "I'm wondering whether I should tell him or not."
+      },
+      "tags": ["grammar", "hesitation", "internal-debate", "n2"]
+    },
+    {
+      "id": "ni-kimatte-iru-001",
+      "front": {
+        "text": "彼が**勝つに決まっている**。",
+        "focus": "に決まっている"
+      },
+      "back": {
+        "meaning": "Bound to / Sure to / Definitely will",
+        "description": "Used to express strong certainty that something will happen based on logical reasoning.",
+        "rule": "Verb dictionary form + に決まっている",
+        "nuance": "Shows the speaker's strong confidence in their prediction.",
+        "example_translation": "He's bound to win."
+      },
+      "tags": ["grammar", "certainty", "prediction", "n2"]
+    },
+    {
+      "id": "ni-chigai-nai-001",
+      "front": {
+        "text": "彼がやった**に違いない**。",
+        "focus": "に違いない"
+      },
+      "back": {
+        "meaning": "Must have / No doubt that / Certainly",
+        "description": "Used to express strong conviction about something based on evidence or reasoning.",
+        "rule": "Verb た form/Noun + に違いない",
+        "nuance": "Shows strong belief based on evidence or logical deduction.",
+        "example_translation": "He must have done it."
+      },
+      "tags": ["grammar", "conviction", "deduction", "n2"]
+    },
+    {
+      "id": "ni-soui-nai-001",
+      "front": {
+        "text": "彼が犯人**に相違ない**。",
+        "focus": "に相違ない"
+      },
+      "back": {
+        "meaning": "No doubt that / Certainly / Must be",
+        "description": "Very formal expression of strong conviction, stronger and more formal than に違いない.",
+        "rule": "Noun + に相違ない",
+        "nuance": "Extremely formal and strong expression, often used in legal or official contexts.",
+        "example_translation": "There's no doubt he's the criminal."
+      },
+      "tags": ["grammar", "conviction", "very-formal", "n2"]
+    },
+    {
+      "id": "to-wa-kagiranai-001",
+      "front": {
+        "text": "頑張れば**勝つとは限らない**。",
+        "focus": "とは限らない"
+      },
+      "back": {
+        "meaning": "Not necessarily / Doesn't mean that / Not always",
+        "description": "Used to indicate that something is not always true or that there are exceptions to a general rule.",
+        "rule": "Verb dictionary form + とは限らない",
+        "nuance": "Warns against assuming something will definitely happen or be true.",
+        "example_translation": "Even if you work hard, it doesn't mean you'll necessarily win."
+      },
+      "tags": ["grammar", "uncertainty", "exceptions", "n2"]
+    },
+    {
+      "id": "yori-hoka-nai-001",
+      "front": {
+        "text": "**祈るよりほかない**。",
+        "focus": "よりほかない"
+      },
+      "back": {
+        "meaning": "Have no choice but to / Can only / Nothing else to do but",
+        "description": "Used when there are no other options available except for one course of action.",
+        "rule": "Verb dictionary form + よりほかない/よりしかたがない",
+        "nuance": "Shows resignation and acceptance that there's only one option left.",
+        "example_translation": "There's nothing I can do but pray."
+      },
+      "tags": ["grammar", "no-choice", "resignation", "n2"]
+    },
+    {
+      "id": "ni-hoka-naranai-001",
+      "front": {
+        "text": "この成功は努力の結果**にほかならない**。",
+        "focus": "にほかならない"
+      },
+      "back": {
+        "meaning": "Nothing but / None other than / Exactly",
+        "description": "Used to emphasize that something is exactly what is stated and nothing else.",
+        "rule": "Noun + にほかならない",
+        "nuance": "Strong emphasis that excludes all other possibilities. Formal expression.",
+        "example_translation": "This success is nothing but the result of effort."
+      },
+      "tags": ["grammar", "emphasis", "exclusion", "n2"]
     }
   ]
 }
